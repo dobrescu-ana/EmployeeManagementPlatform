@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EmployeeManagementPlatform.Models.Department>
+
+@{
+    ViewBag.Title = "ListDeps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List Departments</h2>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+
+<table class="table table-bordered table-striped" id="departmentList">
+    <thead>
+        <tr>
+            <th> @Html.DisplayNameFor(model => model.DepartmentName) </th>
+            <th> @Html.DisplayNameFor(model => model.Details)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.DepartmentName) </td>
+                <td> @Html.DisplayFor(modelItem => item.Details) </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts{
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#departmentList').DataTable();
+        });
+    </script>
+}
+
+

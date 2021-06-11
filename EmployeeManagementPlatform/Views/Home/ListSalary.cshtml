@@ -1,0 +1,86 @@
+﻿@model IEnumerable<EmployeeManagementPlatform.Models.Salary>
+
+<h3>Employee Salaries</h3>
+<br/>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmploymentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasicSalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedicalAllowance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpecialAllowance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FuelAllowance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProvidedFund)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaxDeduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherDeduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalDeduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrossSalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetSalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.employee.Email)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmploymentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasicSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedicalAllowance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpecialAllowance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FuelAllowance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProvidedFund)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaxDeduction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherDeduction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalDeduction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrossSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.employee.Email)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,209 @@
+﻿@model EmployeeManagementPlatform.Models.Salary
+
+@{
+    ViewBag.Title = "AddSalary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Salary</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <section class="content">
+            <div class="row">
+                @* ========= Employee details ========== *@
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Employee Details</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            @* ------ EmployeeID -------- *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.IDEmployee, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(model => model.IDEmployee, new SelectList(ViewBag.Employees as List<EmployeeManagementPlatform.Models.Employee>, "IDEmployee", "FirstName"), new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.IDEmployee, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @* ---- EmploymentType ------ *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EmploymentType, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.EmploymentType, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.EmploymentType, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @* ========= Salary details ========== *@
+                <div class="col-md-6">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">Salary</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            @* ---- Basic Salary -------- *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NetSalary, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.NetSalary, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NetSalary, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @* ---- Gross Salary -------- *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.GrossSalary, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.GrossSalary, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.GrossSalary, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @* -------- Basic Salary -------- *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.BasicSalary, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.BasicSalary, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.BasicSalary, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @* ------ Provided Fund --------- *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ProvidedFund, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.ProvidedFund, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ProvidedFund, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+
+            <div class="row">
+                @* ========= Allowance row ======== *@
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header" style="background-color:mediumpurple">
+                            <h3 class="card-title">Allowance Details</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            @* ---- Medical Allowance---- *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.MedicalAllowance, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.MedicalAllowance, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MedicalAllowance, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @* ---- Fuel Allowance ------ *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.FuelAllowance, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.FuelAllowance, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.FuelAllowance, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @* ------ Special Allowance ----- *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SpecialAllowance, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.SpecialAllowance, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.SpecialAllowance, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @* ========= Deduction row ============ *@
+                <div class="col-md-6">
+                    <div class="card card-secondary">
+                        <div class="card-header" style="background-color:yellowgreen;">
+                            <h3 class="card-title">Deduction Details</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            @* ------ Tax Deduction ----- *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TaxDeduction, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TaxDeduction, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TaxDeduction, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @* ---- Other Deduction ----- *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.OtherDeduction, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.OtherDeduction, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.OtherDeduction, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @* ------ Total Deduction ------- *@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TotalDeduction, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TotalDeduction, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TotalDeduction, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Add salary" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

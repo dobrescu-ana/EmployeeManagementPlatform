@@ -1,0 +1,67 @@
+﻿@model EmployeeManagementPlatform.Models.Salary
+
+@{
+    ViewBag.Title = "ViewMySalary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Salary</h2>
+
+<div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Details</h3>
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <table class="table" style="background-color:white">
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.EmploymentType)</th>
+                <td> @Html.DisplayFor(model => model.EmploymentType) </td>
+            </tr>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.BasicSalary)</th>
+                <td> @Html.DisplayFor(model => model.BasicSalary) </td>
+            </tr>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.MedicalAllowance)</th>
+                <td> @Html.DisplayFor(model => model.MedicalAllowance) </td>
+            </tr>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.SpecialAllowance)</th>
+                <td> @Html.DisplayFor(model => model.SpecialAllowance) </td>
+            </tr>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.FuelAllowance)</th>
+                <td> @Html.DisplayFor(model => model.FuelAllowance) </td>
+            </tr>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.ProvidedFund)</th>
+                <td> @Html.DisplayFor(model => model.ProvidedFund) </td>
+            </tr>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.TaxDeduction)</th>
+                <td> @Html.DisplayFor(model => model.TaxDeduction) </td>
+            </tr>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.OtherDeduction)</th>
+                <td> @Html.DisplayFor(model => model.OtherDeduction) </td>
+            </tr>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.TotalDeduction)</th>
+                <td> @Html.DisplayFor(model => model.TotalDeduction) </td>
+            </tr>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.GrossSalary)</th>
+                <td> @Html.DisplayFor(model => model.GrossSalary) </td>
+            </tr>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.NetSalary)</th>
+                <td> @Html.DisplayFor(model => model.NetSalary) </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+﻿@model EmployeeManagementPlatform.Models.Employee
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+
+                <!-- About Me Box -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">About Me</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <strong><i class="fas fa-user"></i>  Name  </strong>
+                        <p class="text-muted">
+                            @Html.DisplayFor(model => model.LastName)  @Html.DisplayFor(model => model.FirstName)
+                        </p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-envelope"></i> Email</strong>
+
+                        <p class="text-muted"> @Html.DisplayFor(model => model.Email) </p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-phone"></i> Phone No</strong>
+
+                        <p class="text-muted"> @Html.DisplayFor(model => model.PhoneNo) </p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-home"></i> Address</strong>
+
+                        <p class="text-muted"> @Html.DisplayFor(model => model.Address) </p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-birthday-cake"></i> Birthday </strong>
+
+                        <p class="text-muted"> @Html.DisplayFor(model => model.BirthDate) </p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-book"></i> Education </strong>
+
+                        <p class="text-muted"> @Html.DisplayFor(model => model.Education) </p>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+
+            <div class="col-md-6">
+
+                <!-- About Me Box -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title"> Work </h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <strong><i class="fas fa-building"></i>  Department  </strong>
+                        <p class="text-muted">
+                            @Html.DisplayFor(model => model.department.DepartmentName)
+                        </p>
+
+                        <hr>
+
+                        <strong><i class="fas fa-briefcase"></i> Function </strong>
+
+                        <p class="text-muted"> @Html.DisplayFor(model => model.Function) </p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-cogs"></i> Skills</strong>
+
+                        <p class="text-muted"> @Html.DisplayFor(model => model.Skills) </p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-calendar"></i> Date of Join</strong>
+
+                        <p class="text-muted"> @Html.DisplayFor(model => model.DateOfJoin) </p>
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
